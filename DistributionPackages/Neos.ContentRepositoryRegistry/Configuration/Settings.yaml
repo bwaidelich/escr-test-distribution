@@ -1,0 +1,16 @@
+Flowpack:
+  JobQueue:
+    Common:
+      presets:
+        'Neos.ContentRepository:Default':
+          className: Flowpack\JobQueue\Common\Queue\FakeQueue
+          options:
+            async: true
+      queues:
+        'Neos.ContentRepository:Projections':
+          preset: 'Neos.ContentRepository:Default'
+
+Neos:
+  ContentRepositoryRegistry:
+    presets: []
+    contentRepositories: []

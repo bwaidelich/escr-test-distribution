@@ -1,0 +1,49 @@
+{
+    "name": "wwwision/escr-test-distribution",
+    "description": "ESCR test distribution",
+    "license": "proprietary",
+    "config": {
+        "vendor-dir": "Packages/Libraries",
+        "bin-dir": "bin",
+        "preferred-install": {
+            "neos/*": "source"
+        },
+        "allow-plugins": {
+            "neos/composer-plugin": true
+        }
+    },
+    "require": {
+        "neos/flow-development-collection": "dev-master",
+        "neos/event-store": "@dev",
+        "neos/content-repository": "@dev",
+        "neos/event-store-doctrineadapter": "@dev",
+        "neos/content-repository-registry": "@dev",
+        "wwwision/test": "@dev",
+        "neos/content-repository-doctrineadapters": "@dev"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "neos/buildessentials": "dev-master",
+        "phpunit/phpunit": "~9.1",
+        "mikey179/vfsstream": "^1.6.10",
+        "vimeo/psalm": "~4.22.0",
+        "neos/behat": "dev-master",
+        "phpstan/phpstan": "^1.6"
+    },
+    "repositories": {
+        "neosDistributionPackages": {
+            "type": "path",
+            "url": "./DistributionPackages/neos/*"
+        },
+        "distributionPackages": {
+            "type": "path",
+            "url": "./DistributionPackages/*"
+        }
+    },
+    "scripts": {
+        "post-update-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+        "post-install-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+        "post-package-update": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall",
+        "post-package-install": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall"
+    }
+}

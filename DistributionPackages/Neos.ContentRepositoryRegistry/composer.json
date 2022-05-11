@@ -1,0 +1,23 @@
+{
+    "description": "Global, settings-based registry for content repository instances",
+    "type": "neos-package",
+    "name": "neos/content-repository-registry",
+    "require": {
+        "neos/flow": "*",
+        "neos/content-repository": "*",
+        "flowpack/jobqueue-common": "^3.2"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "autoload": {
+        "psr-4": {
+            "Neos\\ContentRepositoryRegistry\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Neos.ContentRepositoryRegistry"
+        }
+    }
+}

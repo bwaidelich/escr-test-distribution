@@ -1,0 +1,16 @@
+{
+    "description": "Core classes and interfaces of the Event Sourced Content Repository",
+    "type": "library",
+    "name": "neos/content-repository",
+    "require": {
+        "neos/event-store": "*"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "autoload": {
+        "psr-4": {
+            "Neos\\ContentRepository\\": "src/"
+        }
+    }
+}

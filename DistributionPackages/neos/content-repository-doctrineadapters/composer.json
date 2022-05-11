@@ -1,0 +1,20 @@
+{
+    "description": "Doctrine DBAL based implementation for the neos/content-repository projections",
+    "type": "library",
+    "name": "neos/content-repository-doctrineadapters",
+    "require": {
+        "neos/content-repository": "*",
+        "neos/event-store-doctrineadapter": "*",
+        "neos/content-repository-doctrineadapters": "*",
+        "neos/event-store": "*",
+        "doctrine/dbal": "^2 || ^3"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "autoload": {
+        "psr-4": {
+            "Neos\\ContentRepository\\DoctrineAdapters\\": "src/"
+        }
+    }
+}

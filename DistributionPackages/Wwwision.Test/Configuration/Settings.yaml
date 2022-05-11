@@ -1,0 +1,26 @@
+Neos:
+  Flow:
+    object:
+      includeClasses:
+        'neos.contentrepositorydoctrineadapters' : ['Neos\\ContentRepository\\DoctrineAdapters\\Factories\\.*']
+
+  ContentRepositoryRegistry:
+
+    presets:
+
+      'default':
+        eventStore:
+          factoryObjectName: Neos\ContentRepository\DoctrineAdapters\Factories\DoctrineEventStoreFactory
+        projectionCatchUpTrigger:
+          factoryObjectName: Neos\ContentRepositoryRegistry\Factories\JobQueueProjectionCatchUpTriggerFactory
+        projections:
+          'Neos.ContentRepository:ContentStream':
+            factoryObjectName: Neos\ContentRepository\DoctrineAdapters\Factories\ContentStreamProjectionFactory
+          'Neos.ContentRepository:ContentGraph':
+            factoryObjectName: Neos\ContentRepository\DoctrineAdapters\Factories\ContentGraphProjectionFactory
+
+    contentRepositories:
+      'site1':
+        preset: 'default'
+      'site2':
+        preset: 'default'

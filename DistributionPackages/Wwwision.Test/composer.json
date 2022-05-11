@@ -1,0 +1,24 @@
+{
+    "description": "Test commands etc",
+    "type": "neos-package",
+    "name": "wwwision/test",
+    "require": {
+        "neos/content-repository": "*",
+        "neos/content-repository-registry": "*",
+        "neos/event-store-doctrineadapter": "*",
+        "neos/content-repository-doctrineadapters": "*"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wwwision\\Test\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Wwwision.Test"
+        }
+    }
+}
