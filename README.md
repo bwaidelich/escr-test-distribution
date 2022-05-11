@@ -1,2 +1,73 @@
-# escr-test-distribution
+# ESCR Test Distribution
+
 Test Distribution for the Event-Sourced Content Repository
+
+## Packages
+
+* Flow-independant packages:
+  * [neos/event-store](DistributionPackages/neos/event-store) Suggestion for a new Neos package implementing the core Event Store abstraction (Doctrine independant)
+  * [neos/event-store-doctrineadapter](DistributionPackages/neos/event-store-doctrineadapter) Doctrine DBAL based implementation for the neos/event-store (Flow independant)
+  * [neos/content-repository](DistributionPackages/neos/content-repository) Mock for the new ESCR PHP Api (implementing simple command bus, blocking command handling, projection abstraction, ...)
+  * [neos/content-repository-doctrineadapters](DistributionPackages/neos/content-repository-doctrineadapters) Doctrine DBAL based implementations for the neos/content-repository projections and factories
+* Flow packages
+  * [Neos.ContentRepositoryRegistry](DistributionPackages/Neos.ContentRepositoryRegistry) Dummy implementation of the "global ESCR registry"
+  * [Wwwision.Test](DistributionPackages/Wwwision.Test) Test package, defining two CR instances (`site1` and `site2`) and a simple CommandController to test things via CLI
+
+## Usage
+
+Checkout and install via:
+
+```
+git clone https://github.com/bwaidelich/escr-test-distribution.git
+cd escr-test-distribution
+composer install
+```
+
+Afterwards make sure to configure your database connection in `Configuration/Settings.yaml`,
+for example:
+
+```yaml
+Neos:
+  Flow:
+    persistence:
+      backendOptions:
+        driver: pdo_mysql
+        dbname: <db>
+        user: <user>
+        password: <pass>
+```
+
+### Setup CR instances
+
+```
+./flow cr:setup site1
+```
+
+This should create the following 4 database tables:
+
+```
+site1_checkpoints
+site1_contentgraph
+site1_contentstream
+site1_events
+```
+
+Optionally run `./flow cr:setup site2` to setup another instance.
+
+### Simulate command handling (with blocking)
+
+```
+./flow cr:createnode site1 contentstream1 node1
+```
+
+#### Other CR CLI commands
+
+```
+  cr:setup                                 
+  cr:reset                                 
+  cr:replay                                
+  cr:catchup                               
+  cr:createcontentstream                   
+  cr:createnode                            
+  cr:read  
+```
