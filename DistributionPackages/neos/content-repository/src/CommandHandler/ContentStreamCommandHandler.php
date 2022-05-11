@@ -25,7 +25,7 @@ final class ContentStreamCommandHandler implements CommandHandlerInterface
     public function handle(CommandInterface $command): EventsToPublish
     {
         return match ($command::class) {
-            CreateContentStream::class => new EventsToPublish($this->streamName($command->contentStreamId), Events::fromArray([new ContentStreamWasAdded($command->contentStreamId), new NodeWasCreated($command->contentStreamId, NodeId::fromString('foo'))/*, new ContentStreamWasAdded($command->contentStreamId)*/]), ExpectedVersion::NO_STREAM()),
+            CreateContentStream::class => new EventsToPublish($this->streamName($command->contentStreamId), Events::with(new ContentStreamWasAdded($command->contentStreamId)), ExpectedVersion::NO_STREAM()),
         };
     }
 
