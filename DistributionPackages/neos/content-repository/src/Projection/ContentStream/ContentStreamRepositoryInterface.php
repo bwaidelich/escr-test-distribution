@@ -14,4 +14,6 @@ interface ContentStreamRepositoryInterface
 
     public function reset(): void;
 
+    public function findOneById(ContentStreamId $contentStreamId): ?array;
+
 }

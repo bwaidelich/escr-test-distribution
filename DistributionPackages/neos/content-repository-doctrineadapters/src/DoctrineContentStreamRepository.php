@@ -39,6 +39,12 @@ final class DoctrineContentStreamRepository implements ContentStreamRepositoryIn
         return $this->connection->fetchAllAssociative('SELECT * FROM ' . $this->connection->quoteIdentifier($this->tableName));
     }
 
+    public function findOneById(ContentStreamId $contentStreamId): ?array
+    {
+        $row = $this->connection->fetchAssociative('SELECT * FROM ' . $this->connection->quoteIdentifier($this->tableName) . ' WHERE id = :contentStreamId', ['contentStreamId' => $contentStreamId->value]);
+        return $row !== false ? $row : null;
+    }
+
     public function setup(): SetupResult
     {
         $schemaManager = $this->connection->getSchemaManager();

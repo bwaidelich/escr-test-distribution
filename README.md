@@ -57,17 +57,40 @@ Optionally run `./flow cr:setup site2` to setup another instance.
 ### Simulate command handling (with blocking)
 
 ```
+./flow cr:createcontentstream site1 contentstream1
 ./flow cr:createnode site1 contentstream1 node1
+```
+
+The following command will fail (soft constraint check):
+
+```
+./flow cr:createnode site1 nonexistingcontentstream some-node
+```
+
+The 2nd command will fail (expect version check):
+
+```
+./flow cr:createcontentstream cs1
+./flow cr:createcontentstream cs1
 ```
 
 #### Other CR CLI commands
 
 ```
-  cr:setup                                 
-  cr:reset                                 
-  cr:replay                                
-  cr:catchup                               
-  cr:createcontentstream                   
-  cr:createnode                            
-  cr:read  
+  cr:setup                                 Setup EventStore and projections for
+                                           the specified site
+  cr:reset                                 Reset projection states of the
+                                           specified site
+  cr:replay                                Replay (i.e. reset and catch up)
+                                           projections for the specified site
+  cr:catchup                               Catch up projections of the
+                                           specified site
+  cr:createcontentstream                   Create a content stream in the
+                                           specified site
+  cr:removecontentstream                   Remove a content stream within the
+                                           specified site
+  cr:createnode                            Add a node in a content stream of a
+                                           site
+  cr:getcontentstreams                     List all content streams of the
+                                           specified site
 ```

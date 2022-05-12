@@ -5,7 +5,7 @@ namespace Neos\ContentRepository\Command;
 
 use Neos\ContentRepository\ValueObject\ContentStreamId;
 
-final class CreateContentStream implements CommandInterface
+final class RemoveContentStream implements CommandInterface
 {
 
     private function __construct(

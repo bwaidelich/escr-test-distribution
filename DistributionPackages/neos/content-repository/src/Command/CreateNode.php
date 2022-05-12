@@ -14,7 +14,7 @@ final class CreateNode implements CommandInterface
         public readonly NodeId $nodeId,
     ) {}
 
-    public static function for(ContentStreamId $contentStreamId, NodeId $nodeId): self
+    public static function with(ContentStreamId $contentStreamId, NodeId $nodeId): self
     {
         return new self($contentStreamId, $nodeId);
     }

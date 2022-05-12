@@ -34,7 +34,7 @@ final class ContentRepository
 
     public function handle(CommandInterface $command): CommandResult
     {
-        $eventsToPublish = $this->commandBus->handle($command);
+        $eventsToPublish = $this->commandBus->handle($command, $this);
         $normalizedEvents = Events::fromArray($eventsToPublish->events->map(fn (EventInterface $event) => $this->normalizeEvent($event)));
         $commitResult = $this->eventStore->commit($eventsToPublish->streamName, $normalizedEvents, $eventsToPublish->expectedVersion);
         $pendingProjections = PendingProjections::fromProjectionsAndEventsAndSequenceNumber($this->projections, $normalizedEvents, $commitResult->sequenceNumber);

@@ -5,6 +5,7 @@ namespace Wwwision\Test\Command;
 
 use Neos\ContentRepository\Command\CreateContentStream;
 use Neos\ContentRepository\Command\CreateNode;
+use Neos\ContentRepository\Command\RemoveContentStream;
 use Neos\ContentRepository\ContentRepository;
 use Neos\ContentRepository\Projection\ContentGraph\ContentGraphProjection;
 use Neos\ContentRepository\Projection\ContentStream\ContentStreamProjection;
@@ -25,6 +26,8 @@ class CrCommandController extends CommandController
     }
 
     /**
+     * Setup EventStore and projections for the specified site
+     *
      * @param string $site
      */
     public function setupCommand(string $site): void
@@ -34,6 +37,8 @@ class CrCommandController extends CommandController
     }
 
     /**
+     * Reset projection states of the specified site
+     *
      * @param string $site
      */
     public function resetCommand(string $site): void
@@ -43,6 +48,8 @@ class CrCommandController extends CommandController
     }
 
     /**
+     * Replay (i.e. reset and catch up) projections for the specified site
+     *
      * @param string $site
      */
     public function replayCommand(string $site): void
@@ -52,6 +59,8 @@ class CrCommandController extends CommandController
     }
 
     /**
+     * Catch up projections of the specified site
+     *
      * @param string $site
      */
     public function catchupCommand(string $site): void
@@ -61,32 +70,53 @@ class CrCommandController extends CommandController
         $this->outputLine('<success>Done</success>');
     }
 
+    // ----
+
     /**
+     * Create a content stream in the specified site
+     *
      * @param string $site
      * @param string $contentStream
      */
     public function createContentStreamCommand(string $site, string $contentStream): void
     {
-        $this->crForSite($site)->handle(CreateContentStream::for(ContentStreamId::fromString($contentStream)))->block();
+        $this->crForSite($site)->handle(CreateContentStream::with(ContentStreamId::fromString($contentStream)))->block();
         $this->outputLine('<success>Done</success>');
     }
 
     /**
+     * Remove a content stream within the specified site
+     *
+     * @param string $site
+     * @param string $contentStream
+     */
+    public function removeContentStreamCommand(string $site, string $contentStream): void
+    {
+        $this->crForSite($site)->handle(RemoveContentStream::with(ContentStreamId::fromString($contentStream)))->block();
+        $this->outputLine('<success>Done</success>');
+    }
+
+    /**
+     * Add a node in a content stream of a site
+     *
      * @param string $site
      * @param string $contentStream
      * @param string $nodeId
      */
     public function createNodeCommand(string $site, string $contentStream, string $nodeId): void
     {
-        $this->crForSite($site)->handle(CreateNode::for(ContentStreamId::fromString($contentStream), NodeId::fromString($nodeId)))->block();
+        $this->crForSite($site)->handle(CreateNode::with(ContentStreamId::fromString($contentStream), NodeId::fromString($nodeId)))->block();
         $this->outputLine('<success>Done</success>');
     }
 
 
     /**
+     *
+     * List all content streams of the specified site
+     *
      * @param string $site
      */
-    public function readCommand(string $site): void
+    public function getContentStreamsCommand(string $site): void
     {
         $state = $this->crForSite($site)->projectionState(ContentStreamProjection::class);
         foreach ($state->findAll() as $row) {
