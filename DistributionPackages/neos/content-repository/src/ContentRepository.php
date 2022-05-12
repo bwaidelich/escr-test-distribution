@@ -7,7 +7,6 @@ use Neos\ContentRepository\CommandHandler\CommandResult;
 use Neos\ContentRepository\CommandHandler\PendingProjections;
 use Neos\ContentRepository\EventStore\EventInterface;
 use Neos\ContentRepository\EventStore\EventNormalizer;
-use Neos\ContentRepository\Exception\ProjectionCatchUpFailed;
 use Neos\ContentRepository\Projection\ProjectionCatchUpTriggerInterface;
 use Neos\ContentRepository\Projection\ProjectionInterface;
 use Neos\ContentRepository\Projection\Projections;
@@ -67,7 +66,6 @@ final class ContentRepository
     /**
      * @template T of ProjectionState
      * @param class-string<ProjectionInterface<T>> $projectionClassName
-     * @throws ProjectionCatchUpFailed
      */
     public function catchUpProjection(string $projectionClassName): void
     {

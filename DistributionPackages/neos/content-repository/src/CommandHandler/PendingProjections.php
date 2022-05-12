@@ -2,6 +2,7 @@
 declare(strict_types=1);
 namespace Neos\ContentRepository\CommandHandler;
 
+use Neos\ContentRepository\ContentRepository;
 use Neos\ContentRepository\Projection\ProjectionInterface;
 use Neos\ContentRepository\Projection\Projections;
 use Neos\ContentRepository\Projection\ProjectionStateInterface;
@@ -9,6 +10,9 @@ use Neos\EventStore\Model\Events;
 use Neos\EventStore\Model\SequenceNumber;
 
 /**
+ * This object is built in {@see ContentRepository::handle()} and contains all projections that were affected by the handled
+ * command and their respective target sequence number. This can be used to block until the affected projections are "up to date"
+ *
  * @implements \IteratorAggregate<ProjectionInterface>
  */
 final class PendingProjections implements \IteratorAggregate

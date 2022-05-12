@@ -3,6 +3,8 @@ declare(strict_types=1);
 namespace Neos\ContentRepository\Projection;
 
 /**
+ * An immutable set of Content Repository projections ({@see ProjectionInterface}
+ *
  * @implements \IteratorAggregate<ProjectionInterface>
  */
 final class Projections implements \IteratorAggregate

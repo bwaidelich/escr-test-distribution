@@ -1,11 +1,12 @@
 <?php
 declare(strict_types=1);
-
 namespace Neos\ContentRepository\EventStore;
 
 use Webmozart\Assert\Assert;
 
 /**
+ * A set of Content Repository "domain events"
+ *
  * @implements \IteratorAggregate<EventInterface>
  */
 final class Events implements \IteratorAggregate

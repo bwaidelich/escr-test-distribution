@@ -4,6 +4,9 @@ namespace Neos\ContentRepository\Projection;
 
 use Neos\ContentRepository\ValueObject\ContentRepositoryId;
 
+/**
+ * Interface for a {@see ProjectionCatchUpTriggerInterface} factory
+ */
 interface ProjectionCatchUpTriggerFactoryInterface
 {
     /**

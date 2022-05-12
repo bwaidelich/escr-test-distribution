@@ -7,6 +7,8 @@ use Neos\EventStore\Model\SequenceNumber;
 use Neos\EventStore\Model\Event;
 
 /**
+ * Common interface for a Content Repository projection
+ *
  * @template TState of ProjectionStateInterface
  */
 interface ProjectionInterface

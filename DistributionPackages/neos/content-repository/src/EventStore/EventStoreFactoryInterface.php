@@ -1,6 +1,5 @@
 <?php
 declare(strict_types=1);
-
 namespace Neos\ContentRepository\EventStore;
 
 use Neos\ContentRepository\ValueObject\ContentRepositoryId;
