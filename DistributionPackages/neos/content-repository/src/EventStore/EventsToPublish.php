@@ -6,8 +6,8 @@ namespace Neos\ContentRepository\EventStore;
 use Neos\ContentRepository\CommandHandler\CommandHandlerInterface;
 use Neos\ContentRepository\ContentRepository;
 use Neos\EventStore\EventStoreInterface;
-use Neos\EventStore\Model\ExpectedVersion;
-use Neos\EventStore\Model\StreamName;
+use Neos\EventStore\Model\EventStream\ExpectedVersion;
+use Neos\EventStore\Model\Event\StreamName;
 
 /**
  * Result of {@see CommandHandlerInterface::handle()} that basically represents an {@see EventStoreInterface::commit()} call

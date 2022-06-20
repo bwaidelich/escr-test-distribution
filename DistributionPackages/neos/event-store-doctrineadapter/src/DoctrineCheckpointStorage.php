@@ -12,8 +12,8 @@ use Doctrine\DBAL\Schema\Schema;
 use Doctrine\DBAL\Types\Types;
 use Neos\EventStore\CatchUp\CheckpointStorageInterface;
 use Neos\EventStore\Exception\CheckpointException;
-use Neos\EventStore\Model\SequenceNumber;
-use Neos\EventStore\Model\SetupResult;
+use Neos\EventStore\Model\Event\SequenceNumber;
+use Neos\EventStore\Model\EventStore\SetupResult;
 use Neos\EventStore\ProvidesSetupInterface;
 
 final class DoctrineCheckpointStorage implements CheckpointStorageInterface, ProvidesSetupInterface

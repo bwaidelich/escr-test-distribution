@@ -1,6 +1,9 @@
 <?php
 declare(strict_types=1);
-namespace Neos\EventStore\Model;
+namespace Neos\EventStore\Model\EventStream;
+
+use Neos\EventStore\Model\Event\SequenceNumber;
+use Neos\EventStore\Model\EventEnvelope;
 
 /**
  * @extends \IteratorAggregate<EventEnvelope>

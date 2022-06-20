@@ -2,7 +2,7 @@
 declare(strict_types=1);
 namespace Neos\EventStore\CatchUp;
 
-use Neos\EventStore\Model\EventStreamInterface;
+use Neos\EventStore\Model\EventStream\EventStreamInterface;
 use Webmozart\Assert\Assert;
 
 final class CatchUp

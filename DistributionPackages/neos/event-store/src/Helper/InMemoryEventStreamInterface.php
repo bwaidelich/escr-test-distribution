@@ -2,9 +2,9 @@
 declare(strict_types=1);
 namespace Neos\EventStore\Helper;
 
-use Neos\EventStore\Model\EventStreamInterface;
+use Neos\EventStore\Model\EventStream\EventStreamInterface;
 use Neos\EventStore\Model\EventEnvelope;
-use Neos\EventStore\Model\SequenceNumber;
+use Neos\EventStore\Model\Event\SequenceNumber;
 
 final class InMemoryEventStreamInterface implements EventStreamInterface
 {

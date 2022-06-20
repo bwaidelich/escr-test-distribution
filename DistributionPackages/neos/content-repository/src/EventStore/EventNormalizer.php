@@ -5,9 +5,9 @@ namespace Neos\ContentRepository\EventStore;
 use Neos\ContentRepository\Event\ContentStreamWasAdded;
 use Neos\ContentRepository\Event\ContentStreamWasRemoved;
 use Neos\ContentRepository\Event\NodeWasCreated;
-use Neos\EventStore\Model\EventData;
+use Neos\EventStore\Model\Event\EventData;
 use Neos\EventStore\Model\Event;
-use Neos\EventStore\Model\EventType;
+use Neos\EventStore\Model\Event\EventType;
 
 /**
  * Central authority to convert Content Repository domain events to Event Store EventData and EventType, vice versa

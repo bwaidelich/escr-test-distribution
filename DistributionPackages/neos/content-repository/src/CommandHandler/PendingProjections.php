@@ -7,7 +7,7 @@ use Neos\ContentRepository\Projection\ProjectionInterface;
 use Neos\ContentRepository\Projection\Projections;
 use Neos\ContentRepository\Projection\ProjectionStateInterface;
 use Neos\EventStore\Model\Events;
-use Neos\EventStore\Model\SequenceNumber;
+use Neos\EventStore\Model\Event\SequenceNumber;
 
 /**
  * This object is built in {@see ContentRepository::handle()} and contains all projections that were affected by the handled

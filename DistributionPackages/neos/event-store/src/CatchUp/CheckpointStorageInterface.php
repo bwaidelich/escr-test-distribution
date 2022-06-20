@@ -2,7 +2,7 @@
 declare(strict_types=1);
 namespace Neos\EventStore\CatchUp;
 
-use Neos\EventStore\Model\SequenceNumber;
+use Neos\EventStore\Model\Event\SequenceNumber;
 
 interface CheckpointStorageInterface
 {

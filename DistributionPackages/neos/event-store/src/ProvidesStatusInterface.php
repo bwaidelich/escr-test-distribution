@@ -2,7 +2,7 @@
 declare(strict_types=1);
 namespace Neos\EventStore;
 
-use Neos\EventStore\Model\Status;
+use Neos\EventStore\Model\EventStore\Status;
 
 interface ProvidesStatusInterface
 {

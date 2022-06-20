@@ -3,7 +3,7 @@ declare(strict_types=1);
 namespace Neos\EventStore\Helper;
 
 use Neos\EventStore\Exception\CheckpointException;
-use Neos\EventStore\Model\SequenceNumber;
+use Neos\EventStore\Model\Event\SequenceNumber;
 use Neos\EventStore\Model\SubscriptionId;
 use Neos\EventStore\Subscription\CheckpointStorageInterface;
 

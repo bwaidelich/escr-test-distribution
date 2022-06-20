@@ -2,6 +2,10 @@
 declare(strict_types=1);
 namespace Neos\EventStore\Model;
 
+use Neos\EventStore\Model\Event\EventData;
+use Neos\EventStore\Model\Event\EventId;
+use Neos\EventStore\Model\Event\EventMetadata;
+use Neos\EventStore\Model\Event\EventType;
 use Webmozart\Assert\Assert;
 
 /**

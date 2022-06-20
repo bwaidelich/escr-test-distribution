@@ -1,9 +1,11 @@
 <?php
 declare(strict_types=1);
-namespace Neos\EventStore\Model;
+namespace Neos\EventStore\Model\EventStream;
 
 use Neos\EventStore\EventStoreInterface;
 use Neos\EventStore\Exception\ConcurrencyException;
+use Neos\EventStore\Model\Event\Version;
+use Neos\EventStore\Model\EventStream\MaybeVersion;
 
 /**
  * The expected version of a stream when committing new events to it

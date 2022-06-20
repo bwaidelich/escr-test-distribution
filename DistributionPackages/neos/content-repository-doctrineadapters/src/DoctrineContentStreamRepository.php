@@ -12,7 +12,7 @@ use Doctrine\DBAL\Schema\Schema;
 use Doctrine\DBAL\Types\Types;
 use Neos\ContentRepository\Projection\ContentStream\ContentStreamRepositoryInterface;
 use Neos\ContentRepository\ValueObject\ContentStreamId;
-use Neos\EventStore\Model\SetupResult;
+use Neos\EventStore\Model\EventStore\SetupResult;
 use Neos\EventStore\ProvidesSetupInterface;
 
 final class DoctrineContentStreamRepository implements ContentStreamRepositoryInterface, ProvidesSetupInterface

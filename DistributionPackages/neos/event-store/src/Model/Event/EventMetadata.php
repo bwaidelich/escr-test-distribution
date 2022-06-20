@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Neos\EventStore\Model;
+namespace Neos\EventStore\Model\Event;
 
 use Webmozart\Assert\Assert;
 

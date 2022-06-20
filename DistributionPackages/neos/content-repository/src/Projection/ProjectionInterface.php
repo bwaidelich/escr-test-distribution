@@ -2,8 +2,8 @@
 declare(strict_types=1);
 namespace Neos\ContentRepository\Projection;
 
-use Neos\EventStore\Model\EventStreamInterface;
-use Neos\EventStore\Model\SequenceNumber;
+use Neos\EventStore\Model\EventStream\EventStreamInterface;
+use Neos\EventStore\Model\Event\SequenceNumber;
 use Neos\EventStore\Model\Event;
 
 /**

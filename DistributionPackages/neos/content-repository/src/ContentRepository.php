@@ -13,11 +13,11 @@ use Neos\ContentRepository\Projection\Projections;
 use Neos\ContentRepository\Projection\ProjectionStateInterface;
 use Neos\EventStore\EventStoreInterface;
 use Neos\EventStore\Model\Event;
-use Neos\EventStore\Model\EventId;
-use Neos\EventStore\Model\EventMetadata;
+use Neos\EventStore\Model\Event\EventId;
+use Neos\EventStore\Model\Event\EventMetadata;
 use Neos\EventStore\Model\Events;
-use Neos\EventStore\Model\SetupResult;
-use Neos\EventStore\Model\VirtualStreamName;
+use Neos\EventStore\Model\EventStore\SetupResult;
+use Neos\EventStore\Model\EventStream\VirtualStreamName;
 use Neos\EventStore\ProvidesSetupInterface;
 
 final class ContentRepository
@@ -36,7 +36,7 @@ final class ContentRepository
         $eventsToPublish = $this->commandBus->handle($command, $this);
         $normalizedEvents = Events::fromArray($eventsToPublish->events->map(fn (EventInterface $event) => $this->normalizeEvent($event)));
         $commitResult = $this->eventStore->commit($eventsToPublish->streamName, $normalizedEvents, $eventsToPublish->expectedVersion);
-        $pendingProjections = PendingProjections::fromProjectionsAndEventsAndSequenceNumber($this->projections, $normalizedEvents, $commitResult->sequenceNumber);
+        $pendingProjections = PendingProjections::fromProjectionsAndEventsAndSequenceNumber($this->projections, $normalizedEvents, $commitResult->highestCommittedSequenceNumber);
         $this->projectionCatchUpTrigger->triggerCatchUp($pendingProjections->projections);
 
         return new CommandResult($pendingProjections, $commitResult);

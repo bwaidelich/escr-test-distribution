@@ -12,7 +12,7 @@ use Doctrine\DBAL\Types\Types;
 use Neos\ContentRepository\Projection\ContentGraph\ContentGraphRepositoryInterface;
 use Neos\ContentRepository\ValueObject\ContentStreamId;
 use Neos\ContentRepository\ValueObject\NodeId;
-use Neos\EventStore\Model\SetupResult;
+use Neos\EventStore\Model\EventStore\SetupResult;
 use Neos\EventStore\ProvidesSetupInterface;
 
 final class DoctrineContentGraphRepository implements ContentGraphRepositoryInterface, ProvidesSetupInterface

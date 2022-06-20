@@ -14,8 +14,8 @@ use Neos\ContentRepository\EventStore\EventsToPublish;
 use Neos\ContentRepository\Projection\ContentStream\ContentStreamFinder;
 use Neos\ContentRepository\Projection\ContentStream\ContentStreamProjection;
 use Neos\ContentRepository\ValueObject\ContentStreamId;
-use Neos\EventStore\Model\ExpectedVersion;
-use Neos\EventStore\Model\StreamName;
+use Neos\EventStore\Model\EventStream\ExpectedVersion;
+use Neos\EventStore\Model\Event\StreamName;
 
 final class ContentStreamCommandHandler implements CommandHandlerInterface
 {

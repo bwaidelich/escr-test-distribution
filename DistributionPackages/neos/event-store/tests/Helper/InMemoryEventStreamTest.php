@@ -3,15 +3,15 @@ declare(strict_types=1);
 namespace Neos\EventStore\Tests\Helper;
 
 use Neos\EventStore\Helper\InMemoryEventStreamInterface;
-use Neos\EventStore\Model\EventData;
-use Neos\EventStore\Model\EventId;
-use Neos\EventStore\Model\EventMetadata;
-use Neos\EventStore\Model\EventStreamInterface;
-use Neos\EventStore\Model\EventType;
+use Neos\EventStore\Model\Event\EventData;
+use Neos\EventStore\Model\Event\EventId;
+use Neos\EventStore\Model\Event\EventMetadata;
+use Neos\EventStore\Model\EventStream\EventStreamInterface;
+use Neos\EventStore\Model\Event\EventType;
 use Neos\EventStore\Model\EventEnvelope;
-use Neos\EventStore\Model\SequenceNumber;
-use Neos\EventStore\Model\StreamName;
-use Neos\EventStore\Model\Version;
+use Neos\EventStore\Model\Event\SequenceNumber;
+use Neos\EventStore\Model\Event\StreamName;
+use Neos\EventStore\Model\Event\Version;
 use PHPUnit\Framework\TestCase;
 
 final class InMemoryEventStreamTest extends TestCase

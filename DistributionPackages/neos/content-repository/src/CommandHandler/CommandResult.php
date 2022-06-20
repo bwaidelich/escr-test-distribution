@@ -4,8 +4,8 @@ namespace Neos\ContentRepository\CommandHandler;
 
 use Neos\ContentRepository\ContentRepository;
 use Neos\ContentRepository\Projection\ProjectionInterface;
-use Neos\EventStore\Model\CommitResult;
-use Neos\EventStore\Model\SequenceNumber;
+use Neos\EventStore\Model\EventStore\CommitResult;
+use Neos\EventStore\Model\Event\SequenceNumber;
 
 /**
  * Result of the {@see ContentRepository::handle()} method

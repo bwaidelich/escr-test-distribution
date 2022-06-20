@@ -2,7 +2,7 @@
 declare(strict_types=1);
 namespace Neos\EventStore;
 
-use Neos\EventStore\Model\SetupResult;
+use Neos\EventStore\Model\EventStore\SetupResult;
 
 interface ProvidesSetupInterface
 {

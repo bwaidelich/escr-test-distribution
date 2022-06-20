@@ -2,6 +2,14 @@
 declare(strict_types=1);
 namespace Neos\EventStore\Model;
 
+use Neos\EventStore\Model\Event\EventData;
+use Neos\EventStore\Model\Event\EventId;
+use Neos\EventStore\Model\Event\EventMetadata;
+use Neos\EventStore\Model\Event\EventType;
+
+/**
+ * Main model for reading and writing (when reading, it is wrapped in {@see EventEnvelope}.
+ */
 final class Event
 {
     public function __construct(

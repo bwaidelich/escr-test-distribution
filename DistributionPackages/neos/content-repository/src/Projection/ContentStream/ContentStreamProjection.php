@@ -10,8 +10,8 @@ use Neos\EventStore\CatchUp\CatchUp;
 use Neos\EventStore\CatchUp\CheckpointStorageInterface;
 use Neos\EventStore\Model\Event;
 use Neos\EventStore\Model\EventEnvelope;
-use Neos\EventStore\Model\EventStreamInterface;
-use Neos\EventStore\Model\SequenceNumber;
+use Neos\EventStore\Model\EventStream\EventStreamInterface;
+use Neos\EventStore\Model\Event\SequenceNumber;
 use Neos\EventStore\ProvidesSetupInterface;
 
 /**

@@ -1,9 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace Neos\EventStore\Model;
+namespace Neos\EventStore\Model\Event;
 
-/// TODO make flightweight
-final class EventType
+final class EventData
 {
     private function __construct(
         public readonly string $value,

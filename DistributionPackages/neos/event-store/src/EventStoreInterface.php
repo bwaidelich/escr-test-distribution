@@ -2,11 +2,11 @@
 declare(strict_types=1);
 namespace Neos\EventStore;
 
-use Neos\EventStore\Model\CommitResult;
-use Neos\EventStore\Model\EventStreamInterface;
-use Neos\EventStore\Model\ExpectedVersion;
-use Neos\EventStore\Model\StreamName;
-use Neos\EventStore\Model\VirtualStreamName;
+use Neos\EventStore\Model\EventStore\CommitResult;
+use Neos\EventStore\Model\EventStream\EventStreamInterface;
+use Neos\EventStore\Model\EventStream\ExpectedVersion;
+use Neos\EventStore\Model\Event\StreamName;
+use Neos\EventStore\Model\EventStream\VirtualStreamName;
 use Neos\EventStore\Model\Events;
 
 interface EventStoreInterface
