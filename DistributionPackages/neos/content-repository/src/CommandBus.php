@@ -6,6 +6,10 @@ use Neos\ContentRepository\Command\CommandInterface;
 use Neos\ContentRepository\CommandHandler\CommandHandlerInterface;
 use Neos\ContentRepository\EventStore\EventsToPublish;
 
+/**
+ * Implementation Detail of the {@see ContentRepository}, which does the command dispatching to the different
+ * {@see CommandHandlerInterface} implementation.
+ */
 final class CommandBus
 {
     /**

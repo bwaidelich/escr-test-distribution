@@ -8,11 +8,9 @@ use Neos\EventStore\Model\EventStore\CommitResult;
 use Neos\EventStore\Model\Event\SequenceNumber;
 
 /**
- * Result of the {@see ContentRepository::handle()} method
+ * Result of the {@see ContentRepository::handle()} method to be able to block until the projections were updated.
  *
- * It contains the {@see PendingProjections} (i.e. all affected projections by the command and their target sequence number)
- * for the blocking mechanism.
- * It also contains the {@see CommitResult} that contains the highest sequence number and version of the published events
+ * {@see PendingProjections} for a detailed explanation how the blocking works.
  */
 final class CommandResult
 {
@@ -21,9 +19,14 @@ final class CommandResult
         public readonly CommitResult $commitResult,
     ) {}
 
+    /**
+     * Wait until all projections are up to date; i.e. have processed the events.
+     *
+     * @return void
+     */
     public function block(): void
     {
-        foreach ($this->pendingProjections as $pendingProjection) {
+        foreach ($this->pendingProjections->projections as $pendingProjection) {
             $expectedSequenceNumber = $this->pendingProjections->getExpectedSequenceNumber($pendingProjection);
             $this->blockProjection($pendingProjection, $expectedSequenceNumber);
         }

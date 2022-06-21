@@ -2,15 +2,21 @@
 declare(strict_types=1);
 namespace Neos\ContentRepository\EventStore;
 
+use Neos\ContentRepository\ContentRepository;
 use Neos\ContentRepository\Event\ContentStreamWasAdded;
 use Neos\ContentRepository\Event\ContentStreamWasRemoved;
 use Neos\ContentRepository\Event\NodeWasCreated;
+use Neos\ContentRepository\Projection\ContentGraph\ContentGraphProjection;
 use Neos\EventStore\Model\Event\EventData;
 use Neos\EventStore\Model\Event;
 use Neos\EventStore\Model\Event\EventType;
 
 /**
- * Central authority to convert Content Repository domain events to Event Store EventData and EventType, vice versa
+ * Central authority to convert Content Repository domain events to Event Store EventData and EventType, vice versa.
+ *
+ * For normalizing (from classes to event store), this is called from {@see ContentRepository::normalizeEvent()}.
+ *
+ * For denormalizing (from event store to classes), this is called in the individual projections; f.e. {@see ContentGraphProjection::apply()}.
  */
 final class EventNormalizer
 {
