@@ -4,9 +4,8 @@
     "name": "neos/content-repository-doctrineadapters",
     "require": {
         "neos/content-repository": "*",
-        "neos/event-store-doctrineadapter": "*",
-        "neos/content-repository-doctrineadapters": "*",
-        "neos/event-store": "*",
+        "neos/eventstore-doctrineadapter": "*",
+        "neos/eventstore": "*",
         "doctrine/dbal": "^2 || ^3"
     },
     "require-dev": {

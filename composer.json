@@ -14,9 +14,9 @@
     },
     "require": {
         "neos/flow-development-collection": "dev-master",
-        "neos/event-store": "@dev",
+        "neos/eventstore": "@dev",
+        "neos/eventstore-doctrineadapter": "@dev",
         "neos/content-repository": "@dev",
-        "neos/event-store-doctrineadapter": "@dev",
         "neos/content-repository-registry": "@dev",
         "wwwision/test": "@dev",
         "neos/content-repository-doctrineadapters": "@dev"

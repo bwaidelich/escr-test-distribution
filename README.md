@@ -5,8 +5,8 @@ Test Distribution for the Event-Sourced Content Repository
 ## Packages
 
 * Flow-independant packages:
-  * [neos/event-store](DistributionPackages/neos/event-store) Suggestion for a new Neos package implementing the core Event Store abstraction (Doctrine independant)
-  * [neos/event-store-doctrineadapter](DistributionPackages/neos/event-store-doctrineadapter) Doctrine DBAL based implementation for the neos/event-store (Flow independant)
+  * [neos/eventstore](DistributionPackages/neos/event-store) Suggestion for a new Neos package implementing the core Event Store abstraction (Doctrine independant)
+  * [neos/eventstore-doctrineadapter](DistributionPackages/neos/event-store-doctrineadapter) Doctrine DBAL based implementation for the neos/event-store (Flow independant)
   * [neos/content-repository](DistributionPackages/neos/content-repository) Mock for the new ESCR PHP Api (implementing simple command bus, blocking command handling, projection abstraction, ...)
   * [neos/content-repository-doctrineadapters](DistributionPackages/neos/content-repository-doctrineadapters) Doctrine DBAL based implementations for the neos/content-repository projections and factories
 * Flow packages

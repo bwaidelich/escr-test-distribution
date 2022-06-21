@@ -5,7 +5,7 @@
     "require": {
         "neos/content-repository": "*",
         "neos/content-repository-registry": "*",
-        "neos/event-store-doctrineadapter": "*",
+        "neos/eventstore-doctrineadapter": "*",
         "neos/content-repository-doctrineadapters": "*"
     },
     "require-dev": {
